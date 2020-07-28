@@ -5,7 +5,8 @@
   "main": "server.js",
   "repository": "https://github.com/ParsaHejabi/TweetCleaner.git",
   "scripts": {
-    "dev": "nodemon server.js"
+    "dev": "nodemon server.js",
+    "start": "node server.js"
   },
   "author": "Parsa Hejabi <parsa.hejabi@gmail.com>",
   "license": "MIT",
