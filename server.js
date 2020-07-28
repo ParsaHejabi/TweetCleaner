@@ -66,6 +66,7 @@ app.use(
 app.use(require('body-parser').urlencoded({ extended: true }));
 app.use(
   require('express-session')({
+    name: 'TweetCleanerSession',
     secret: process.env.SESSION_SECRET,
     resave: true,
     saveUninitialized: true,
