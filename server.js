@@ -45,8 +45,8 @@ app.use(
 // Setup cors
 app.use(
   cors({
-    origin: authRoutes.frontEndUrl,
-    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+    origin: 'https://parsahejabi.github.io/',
+    methods: 'GET,HEAD,POST',
     credentials: true,
   })
 );
@@ -68,26 +68,6 @@ app.use(
 
 // Setup routes
 app.use('/auth', authRoutes.router);
-
-// const authCheck = (req, res, next) => {
-//   if (!req.user) {
-//     res.status(401).json({
-//       authenticated: false,
-//       message: 'user has not been authenticated',
-//     });
-//   } else {
-//     next();
-//   }
-// };
-
-// app.get('/', authCheck, (req, res) => {
-//   res.status(200).json({
-//     authenticated: true,
-//     message: 'User successfully authenticated.',
-//     user: req.user,
-//     cookies: req.cookies,
-//   });
-// });
 
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);

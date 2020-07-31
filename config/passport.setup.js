@@ -28,6 +28,8 @@ passport.use(
           screenName: profile._json.screen_name,
           twitterId: profile._json.id_str,
           profileImageUrl: profile._json.profile_image_url_https,
+          accessToken: token,
+          accessTokenSecret: tokenSecret,
         }).save();
 
         if (newUser) {

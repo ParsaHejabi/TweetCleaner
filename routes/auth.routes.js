@@ -13,6 +13,8 @@ if (!process.env.NODE_ENV || process.env.NODE_ENV === 'development') {
 
 router.get('/login/success', (req, res) => {
   if (req.user) {
+    req.user.accessToken = undefined;
+    req.user.accessTokenSecret = undefined;
     res.json({
       success: true,
       message: 'User has successfully authenticated.',
