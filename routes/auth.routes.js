@@ -25,8 +25,8 @@ router.get('/login/success', (req, res) => {
 });
 
 router.get('/login/failed', (req, res) => {
+  req.statusCode(401);
   res.redirect(
-    401,
     url.format({
       protocol: 'https',
       hostname: 'parsahejabi.github.io',
