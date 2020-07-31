@@ -30,7 +30,7 @@ router.get('/login/failed', (req, res) => {
     url.format({
       protocol: 'https',
       hostname: 'parsahejabi.github.io',
-      pathname: '/TweetCleanerWebsite/',
+      pathname: '/TweetCleanerWebsite',
       query: {
         success: false,
         message: 'User failed to authenticate.',
