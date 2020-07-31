@@ -38,6 +38,7 @@ app.use(
       httpOnly: true,
       maxAge: 30 * 60 * 1000,
       secure: 'auto',
+      sameSite: 'none',
     },
   })
 );
