@@ -25,7 +25,7 @@ router.get('/login/success', (req, res) => {
 });
 
 router.get('/login/failed', (req, res) => {
-  req.statusCode(401);
+  res.status(401);
   res.redirect(
     url.format({
       protocol: 'https',
