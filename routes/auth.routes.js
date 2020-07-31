@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const passport = require('passport');
+const url = require('url');
 
 let frontEndUrl;
 
@@ -8,7 +9,7 @@ if (!process.env.NODE_ENV || process.env.NODE_ENV === 'development') {
   frontEndUrl = 'http://localhost:3000';
 } else {
   // production
-  frontEndUrl = 'https://parsahejabi.github.io/TweetCleanerWebsite/';
+  frontEndUrl = 'https://parsahejabi.github.io/TweetCleanerWebsite';
 }
 
 router.get('/login/success', (req, res) => {
@@ -24,10 +25,18 @@ router.get('/login/success', (req, res) => {
 });
 
 router.get('/login/failed', (req, res) => {
-  res.status(401).json({
-    success: false,
-    message: 'User failed to authenticate.',
-  });
+  res.redirect(
+    401,
+    url.format({
+      protocol: 'https',
+      hostname: 'parsahejabi.github.io',
+      pathname: '/TweetCleanerWebsite/',
+      query: {
+        success: false,
+        message: 'User failed to authenticate.',
+      },
+    })
+  );
 });
 
 router.get('/logout', (req, res) => {

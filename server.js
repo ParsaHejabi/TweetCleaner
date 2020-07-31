@@ -45,7 +45,7 @@ app.use(
 // Setup cors
 app.use(
   cors({
-    origin: 'https://parsahejabi.github.io/',
+    origin: 'https://parsahejabi.github.io',
     methods: 'GET,HEAD,POST',
     credentials: true,
   })
