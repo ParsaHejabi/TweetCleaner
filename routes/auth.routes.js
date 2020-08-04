@@ -9,7 +9,7 @@ if (!process.env.NODE_ENV || process.env.NODE_ENV === 'development') {
   frontEndUrl = 'http://localhost:3000';
 } else {
   // production
-  frontEndUrl = 'https://parsahejabi.github.io/tweetcleanerwebsite';
+  frontEndUrl = 'https://parsahejabi.github.io/TweetCleanerWebsite';
 }
 
 router.get('/login/success', (req, res) => {
@@ -30,7 +30,7 @@ router.get('/login/failed', (req, res) => {
     url.format({
       protocol: 'https',
       hostname: 'parsahejabi.github.io',
-      pathname: '/tweetcleanerwebsite',
+      pathname: '/TweetCleanerWebsite',
       query: {
         success: false,
         message: 'User failed to authenticate.',
